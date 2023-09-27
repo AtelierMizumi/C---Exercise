@@ -8,10 +8,10 @@ int main(){
     cout << "Input your desired set of numbers: ";
     cin >> num1 >> num2;
 
-    cout << "Here's your swaped variables: " << num1 << " + " << num2 << " = " << num1 + num2 << endl;
-    cout << "Here's your swaped variables: " << num1 << " - " << num2 << " = " << num1 - num2 << endl;
-    cout << "Here's your swaped variables: " << num1 << " * " << num2 << " = " << num1 * num2 << endl;
-    cout << "Here's your swaped variables: " << num1 << " / " << num2 << " = " << num1 / num2 << endl;
-    cout << "Here's your swaped variables: " << num1 << " % " << num2 << " = " << num1 % num2 << endl;
+    cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+    cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+    cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+    cout << num1 << " / " << num2 << " = " << (float)num1 / num2 << endl;
+    cout << num1 << " % " << num2 << " = " << num1 % num2 << endl;
     return 0;
 }
