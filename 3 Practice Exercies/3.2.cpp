@@ -1,13 +1,11 @@
 #include <iostream>
-
 using namespace std;
 
 int main(){
-    string input;
-    cout << "Insert your string: ";
-    cin >> input;
-    int len = input.size();
-    cout << "The length of the string is: " << len << endl;
-
+    double num_double;
+    cout << "Insert your real number: ";
+    cin >> num_double;
+    
+    cout << "The integer version of it: " << (int)num_double;
     return 0;
 }

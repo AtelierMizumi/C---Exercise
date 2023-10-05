@@ -1,14 +1,17 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 int main() {
-    double deg;
-    cout << "Insert the degree of the angle: ";
-    cin >> deg;
-    double rad = deg * 3.1415/180;
     
-    cout << "Cos: " << cos(rad) << ", Sine: " << sin(rad) << ", Tan: " <<  tan(rad) << ", Cotan: " << (cos(rad)/sin(rad));
+    int x,y;
+    cout << "Insert two integer x and y: ";
+    cin >> x >> y;
+
+    int p = x*y;
+    int s = x+y;
+
+    // q = s2+p(sx)*(p+y) 
+    // no la vay do
 
     return 0;
 }
