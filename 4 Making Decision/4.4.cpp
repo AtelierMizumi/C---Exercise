@@ -9,7 +9,7 @@ int main () {
     {
         cout << "This is a triangle";
     }
-    else if (a+b+c != 180)
+    else
     {
         cout << "This is not a triangle";
     }

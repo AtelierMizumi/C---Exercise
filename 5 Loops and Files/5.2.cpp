@@ -16,9 +16,15 @@ bool isPrime(int n){
 }
 
 int main(){
-    
-    isPrime(11) ? cout << " true\n" : cout << " false\n";
-    isPrime(15) ? cout << " true\n" : cout << " false\n";
-    return 0;
-    
+    int num;
+    cout << "Insert a number: ";
+    cin >> num;
+    if (isPrime(num))
+    {
+        cout << num << " is a prime number";
+    }
+    else
+    {
+        cout << num << " is not a prime number";
+    }
 }
