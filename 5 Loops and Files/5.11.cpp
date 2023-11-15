@@ -1,10 +1,9 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 int main(){
     int i, n, count;
-    cout << "This program will print products of a num to words";
+    cout << "This program will print products of a num to words" << endl;
     cout << "Insert n: ";
     cin >> n;
 
@@ -25,7 +24,7 @@ int main(){
         temp/=10;
     }
     
-    cout << "Digits in the number: " << endl;
+    cout << endl << "Digits in the number: " << endl;
     for (i = 0; i < count; i++)
     {
         cout << digits[i] << " ";
