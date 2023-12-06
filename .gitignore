@@ -1,3 +1,6 @@
 *.exe
 *.7z
 *.rar
+6 Functions/output/*
+7 Arrays/output/*
+.vscode/*
