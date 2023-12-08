@@ -6,7 +6,7 @@ int main(){
 
     cout << "Enter amount of elements in array: ";
 
-\kiju    int array[n];
+    int array[n];
     for (i = 0; i < n; i++){
         cout << "Enter element number " << i+1 << " :";
         cin >> array[i]; 
