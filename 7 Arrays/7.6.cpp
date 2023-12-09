@@ -12,6 +12,7 @@ vector<int> intVectorCreator(){
             break;
         } else if (n==0){
             cout << "Zero is neither even or odd. \n";
+            cin >> n;
         } else if (n>0){
             intVector.push_back(n);
         } else {
@@ -39,7 +40,7 @@ double findAverageEven(vector<int> intVector){
     int count = 0;
 
     for (int x:intVector){
-        if (x%2==0){w
+        if (x%2==0){
             sum+=x;
             count++;
         };
