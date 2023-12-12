@@ -36,7 +36,7 @@ void printDuplicates(std::vector<int>& inputVector) {
         // Resize the vector to remove the deleted elements
         inputVector.resize(newEnd - inputVector.begin());
     }
-}
+} // genius way of using vector functions
 
 int main(){
 
