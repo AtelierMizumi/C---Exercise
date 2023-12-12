@@ -33,8 +33,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/thuanc177/Documents/VSCode/C---Exercise/7 Arrays",
-      "program": "/home/thuanc177/Documents/VSCode/C---Exercise/7 Arrays/build/Debug/outDebug",
+      "cwd": "/home/thuanc177/Documents/VSCode/C---Exercise",
+      "program": "/home/thuanc177/Documents/VSCode/C---Exercise/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
