@@ -22,7 +22,7 @@ vector<int> intVectorCreator(){
 };
 
 void getAverageBetweenMaxAndMin(vector<int> intVector){
-    int max = intVector.begin(), min = intVector.begin();
+    int max = intVector[0], min = intVector[0];
     for (const auto& element : intVector) {
         if (max < element) {
             max = element;
