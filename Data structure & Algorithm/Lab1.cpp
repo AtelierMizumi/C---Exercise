@@ -3,8 +3,6 @@
 #define MAX 10000
 using namespace std;
 
-//
-
 void insertArray(int A[], int n);
 void printArray(int A[], int n);
 int sumArray(int A[], int n);
@@ -19,7 +17,7 @@ void deleteValueAtPositionP(int p, int A[], int *n);
 int main(){
     
     int n = 5;
-    int A[MAX];
+    int A[MAX]; 
     insertArray(A, n);
 
     cout << "Sum of all elements: " << sumArray(A, n) << "\n";
@@ -27,7 +25,8 @@ int main(){
     cout << "Average between even number(s): " << averageEven(A, n) << "\n";
 
     cout << "Insert x and y to print: ";
-    int x, y;
+    int x;
+    int y;
     cin >> x >> y;
     while (x > y || x < 0 || y > n-1) {
         cout << "Please enter valid x and y again:";
