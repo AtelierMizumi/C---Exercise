@@ -129,6 +129,7 @@ void overwriteXatPositionP(int x, int p, int A[], int *n){
     A[p]=x;
 }
 void insertValueX(int x, int p, int A[], int *n){
+    *n=*n+1;
     int delta=0;
     int B[MAX];
     for (int i = 0; i < *n; i++) {
@@ -141,9 +142,9 @@ void insertValueX(int x, int p, int A[], int *n){
         }
         A[i+delta]=B[i];
     }
-    *n=*n+1;
 }
 void deleteValueAtPositionP(int p, int A[], int *n){
+    // This can be modified to delete multiple position
     int delta=0;
     int B[MAX];
     for (int i = 0; i < *n; i++) {
