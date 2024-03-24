@@ -129,7 +129,7 @@ void Insert(int x, int n){
     else if (n==0){
         Node* P = newNode(x);
         P->next=head;
-        P=head;
+        head=P;
     } else if (n==CountNode()-1){
         AddLast(x);
     } else {
