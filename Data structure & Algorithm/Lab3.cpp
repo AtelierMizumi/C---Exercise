@@ -92,13 +92,14 @@ void input(SV a[], int n){
 }
 void output(SV a[], int n){
     for (int i = 0; i < n; i++) {
-        cout << "Student " << i + 1 << '\n';
-        cout << "Name: " << a[i].name << '\n';
-        cout << "Math: " << a[i].math << '\n';
-        cout << "Physic: " << a[i].physic << '\n';
-        cout << "Language: " << a[i].language << '\n';
+        if (a[i].name != "") {
+            cout << "Student " << i + 1 << '\n';
+            cout << "Name: " << a[i].name << '\n';
+            cout << "Math: " << a[i].math << '\n';
+            cout << "Physic: " << a[i].physic << '\n';
+            cout << "Language: " << a[i].language << '\n';
+        }
     }
-
 }
 
 void insert(SV x, int p, SV a[], int *n){
@@ -119,5 +120,5 @@ void search(string name, SV a[], int n){
             return;
         }
     }
-    cout << "Student with the name " << name << " couldn't be found." << '\n';
+    cout << "Student found" << '\n';
 }
