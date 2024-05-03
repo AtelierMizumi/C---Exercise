@@ -20,6 +20,10 @@ template <typename T>
 bool isMyArrayActuallySorted(T A[], int n);
 template <typename T>
 void QuickSort_RecursiveLeftRight(T A[], int L, int R);
+template <typename T>
+void MergeSort_RecursiveLeftRight(T A[], int L, int R);
+template <typename T>
+void mergeLeftRight(T A[], int L, int M, int R);
 
 int main(){
 
@@ -66,7 +70,7 @@ int main(){
     Nhap(A, n);
     cout << "MergeSort started..." << endl;
     start = clock();
-    MergeSort(A, n);
+    MergeSort_RecursiveLeftRight(A, 0, 500000);
     end = clock();
     time = (end - start) / CLOCKS_PER_SEC;
     cout << "MergeSort: " << time << " seconds." << endl;
@@ -246,12 +250,57 @@ void MergeSort(T A[], int n){
 }
 
 template <typename T>
-bool isMyArrayActuallySorted(T A[], int n){
-    for (int i = 0; i < n-1; i++) {
-      if (A[i+1] < A[i]) {
-        cout << "Array is not sorted properly, please check used algorithm" << endl;
-        return false;
-      }
+void MergeSort_RecursiveLeftRight(T A[], int L, int R)
+{
+  if (L<R)
+  {
+    int M = (L+R)/2;
+    MergeSort_RecursiveLeftRight(A, L, M);
+    MergeSort_RecursiveLeftRight(A, M+1, R);
+    mergeLeftRight(A, L, M, R);
+  }
+}
+
+template <typename T>
+void mergeLeftRight(T A[], int L, int M, int R)
+{
+  if (L == R) return;
+  int n1 = M - L + 1;
+  int n2 = R - M;
+  T *L1 = new T[n1];
+  T *L2 = new T[n2];
+  for (int i = 0; i < n1; i++) {
+    L1[i] = A[L + i];
+  }
+  for (int i = 0; i < n2; i++) {
+    L2[i] = A[M + 1 + i];
+  }
+  int i = 0, j = 0, k = L;
+  while (i < n1 && j < n2) {
+    if (L1[i] <= L2[j]) {
+      A[k++] = L1[i++];
+    } else {
+      A[k++] = L2[j++];
     }
-    return true;
+  }
+  while (i < n1) {
+    A[k++] = L1[i++];
+  }
+  while (j < n2) {
+    A[k++] = L2[j++];
+  }
+  delete[] L1;
+  delete[] L2;
+}
+
+
+template <typename T>
+bool isMyArrayActuallySorted(T A[], int n){
+  for (int i = 0; i < n-1; i++) {
+    if (A[i+1] < A[i]) {
+      cout << "Array is not sorted properly, please check used algorithm" << endl;
+      return false;
+    }
+  }
+  return true;
 }
