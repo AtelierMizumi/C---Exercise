@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
-#include <cstdio>
 using namespace std;
 
 // only working with int array but
 // trying out template functions to fit more data types
-template <typename T>
-void Nhap(T A[], int n);
+void Nhap(int A[], int n);
 template <typename T>
 void BubbleSort(T A[], int n);
 template <typename T>
@@ -79,53 +77,13 @@ int main(){
     return 0;
 }
 
-template <typename T>
-void Nhap(T A[], int n){
-  srand(time(NULL));
-  // random data generator based on data type of the array
-  if (is_same<T, int>::value) {
+void Nhap(int A[], int n) {
+    random_device rd; // Initialize random device to obtain seed
+    mt19937 gen(rd()); // Initialize Mersenne Twister PRNG with seed from random device
+    uniform_int_distribution<> dis(1, 1000000); // Initialize uniform distribution from 1 to 1000000
     for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
+        A[i] = dis(gen); // Generate random number from uniform distribution
     }
-  } else if (is_same<T, double>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000 + 0.5;
-    }
-  } else if (is_same<T, char>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 26 + 65;
-    }
-  } else if (is_same<T, float>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000 + 0.5;
-    }
-  } else if (is_same<T, long>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else if (is_same<T, long long>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else if (is_same<T, short>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else if (is_same<T, unsigned>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else if (is_same<T, unsigned long>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else if (is_same<T, unsigned long long>::value) {
-    for (int i = 0; i < n; i++) {
-      A[i] = rand() % 10000;
-    }
-  } else {
-    cout << "Data type not supported" << endl;
-  }
 }
 
 template <typename T>
@@ -297,7 +255,7 @@ void mergeLeftRight(T A[], int L, int M, int R)
 template <typename T>
 bool isMyArrayActuallySorted(T A[], int n){
   for (int i = 0; i < n-1; i++) {
-    if (A[i+1] < A[i]) {
+      if (A[i+1] < A[i]) {
       cout << "Array is not sorted properly, please check used algorithm" << endl;
       return false;
     }

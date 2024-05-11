@@ -12,10 +12,10 @@ int BinarySearch_Recursive(int A[], int left, int right, int x);
 int main(){
 
     int A[SIZE];void Nhap(int A[], int n);
-void Xuat(int A[], int n);
-void NoiBot(int A[], int n);
-int Search(int A[], int n, int x);
-int BinarySearch(int A[], int n, int x);
+    void Xuat(int A[], int n);
+    void NoiBot(int A[], int n);
+    int Search(int A[], int n, int x);
+    int BinarySearch(int A[], int n, int x);
 
     int n = 10;
     Nhap(A, n);
