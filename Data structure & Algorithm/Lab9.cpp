@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include <cstdio>
+#include <cwchar>
 using namespace std;
 
 // only working with int array but
@@ -147,4 +148,38 @@ bool isMyArrayActuallySorted(T A[], int n){
      return false;
   }
   return true;
+}
+
+template <typename T>
+int BinarySearch(T A[], int n, T key){
+  int low, high, mid;
+  low = 0;
+  high = n-1;
+  while(low <= high){
+    mid = (low + high) / 2;
+    if(key == A[mid]){
+      return mid;
+    } else if(key < A[mid]){
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return -1;
+}
+
+template <typename T>
+int RecursiveBinarySearch(T A[], int low, int high, T key){
+  int mid;
+  if(low <= high){
+    mid = (low + high) / 2;
+    if(key == A[mid]){
+      return mid;
+    } else if(key < A[mid]){
+      return RecursiveBinarySearch(A, low, mid-1, key);
+    } else {
+      return RecursiveBinarySearch(A, mid+1, high, key);
+    }
+  }
+  return -1;
 }
